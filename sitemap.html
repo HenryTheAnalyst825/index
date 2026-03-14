@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Map PetFood Store</title>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #e3d8b7;
+      padding: 20px;
+    }
+    h1 {
+      color: #ff9800;
+    }
+    .mermaid {
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐾 Site Map - PetFood Store</h1>
+  <div class="mermaid">
+    graph TD
+    A[Home] --> B[About]
+    A --> C[Products]
+    A --> A1[Search]
+    C --> C1[Food for Dogs]
+    C --> C2[Food for Cats]
+    C --> C3[Snacks]
+    A --> D[Blog]
+    A --> E[Contact]
+    A --> F[Login]
+    A --> G[Signup]
+    A --> H[Cart]
+    H --> H1[Add to Cart]
+    H --> H2[Checkout]
+  </div>
+</body>
+</html>

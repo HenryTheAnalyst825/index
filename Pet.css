@@ -1,0 +1,356 @@
+:root {
+    --bs-primary: #4CAF50;
+    --bs-primary-rgb: 76, 175, 80;
+    --bs-primary-dark: #388E3C;
+    --bs-secondary: #2196F3;
+    --bs-accent: #FFEB3B;
+    --bs-muted: #E8F5E8;
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--bs-primary-dark);
+    border-color: var(--bs-primary-dark);
+}
+
+.btn-outline-primary {
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    background-color: var(--bs-primary-dark);
+    border-color: var(--bs-primary-dark);
+    color: white;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 5px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus {
+    color: white;
+    background-color: var(--bs-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-home {
+    background-color: #8eed0a;
+}
+
+.nav-home:hover,
+.nav-home:focus {
+    background-color: #e68900;
+}
+
+.nav-about {
+    background-color: #4caf50;
+}
+
+.nav-about:hover,
+.nav-about:focus {
+    background-color: #388e3c;
+}
+
+.nav-products {
+    background-color: #2196f3;
+}
+
+.nav-products:hover,
+.nav-products:focus {
+    background-color: #1976d2;
+}
+
+.nav-contact {
+    background-color: #9c27b0;
+}
+
+.nav-contact:hover,
+.nav-contact:focus {
+    background-color: #7b1fa2;
+}
+
+.nav-cart {
+    background-color: #ffeb3b;
+    color: #333 !important;
+}
+
+.nav-cart:hover,
+.nav-cart:focus {
+    background-color: #fbc02d;
+}
+
+.nav-login {
+    background-color: #00bcd4;
+}
+
+.nav-login:hover,
+.nav-login:focus {
+    background-color: #0097a7;
+}
+
+.nav-signup {
+    background-color: #ff5722;
+}
+
+.nav-signup:hover,
+.nav-signup:focus {
+    background-color: #e64a19;
+}
+
+.nav-account {
+    background-color: var(--bs-muted);
+}
+
+.nav-account:hover,
+.nav-account:focus {
+    background-color: var(--bs-primary);
+}
+
+.navbar-nav .nav-link.active {
+    border: 2px solid white;
+    font-weight: bold;
+}
+
+.navbar-collapse {
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .navbar-nav .nav-link i {
+        font-size: 0.9rem;
+    }
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.card-link {
+    color: var(--bs-primary);
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+.sort-feedback {
+    font-size: 0.9rem;
+    color: #555;
+    transition: opacity 0.3s;
+}
+
+.sort-feedback.active {
+    opacity: 1;
+}
+
+.product-card {
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card[data-category="food-dog"] {
+    background-color: #e3f2fd;
+}
+
+.product-card[data-category="food-cat"] {
+    background-color: #fce4ec;
+}
+
+.product-card[data-category="snacks"] {
+    background-color: #e8f5e8;
+}
+
+.product-card img {
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*Forms and Modals Styles */
+.confirmation-message {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.list-group-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+/* Remove button styling in cart */
+.list-group-item button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.list-group-item button:hover,
+.list-group-item button:focus {
+    background-color: #d32f2f;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+}
+
+.page {
+    display: none;
+}
+
+.page.active {
+    display: block;
+}
+
+/* Footer social media logos adjustment */
+footer .d-flex img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+footer .d-flex img:hover {
+    transform: scale(1.1);
+}
+
+body {
+    background-color: #d8dfbb;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+body.dark-mode .navbar {
+    background-color: #333 !important;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .hero {
+    background-color: #333;
+    color: #ffffff;
+}
+
+body.dark-mode footer {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode .modal-content {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+body.dark-mode .form-control {
+    background-color: #333;
+    color: #ffffff;
+    border-color: #555;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 1000;
+}
+
+/* Blog section image styling */
+.blog-section .card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Product Modal */
+.modal-body img {
+    max-height: 300px;
+    object-fit: cover;
+}
+
+
+
+
+
+/* Custom Cart Page */
+#cart h2 {
+    font-weight: 700;
+    color: #4CAF50;
+}
+
+#cart .text-warning {
+    color: #ff9900 !important;
+}
+
+#cart .card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#cart .card-body {
+    background-color: #fff;
+    border-radius: 15px;
+}
+
+#cart .btn-warning {
+    background-color: #ff9900;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s;
+}
+
+#cart .btn-warning:hover {
+    background-color: #e68a00;
+}
+
+#cart #total {
+    font-size: 1.2rem;
+    color: #dc3545;
+}

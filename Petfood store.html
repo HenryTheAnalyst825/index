@@ -1,0 +1,478 @@
+z<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PetFood Store - Thức ăn và phụ kiện cao cấp cho thú cưng của bạn.">
+    <title>PetFood Store - Thực Phẩm Cho Thú Cưng </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="Pet.css">
+    <link rel="icon" href="https://via.placeholder.com/32?text=Pet" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="Pet.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 d-flex align-items-center gap-3" onclick="showPage('home')" role="button"
+                    tabindex="0" style="cursor: pointer;" aria-label="Về trang chủ">
+                    <img src="imagespetfud/logo2.png" alt="Logo PetFood Store" class="logo">
+                    <h1 class="h4 mb-0">🐾 PetFood Store</h1>
+                </div>
+                <div class="col-md-4">
+                    <div class="input-group">
+                        <input type="text" id="search" class="form-control" placeholder="Tìm kiếm sản phẩm..."
+                            aria-label="Tìm kiếm sản phẩm" oninput="filterProducts()">
+                        <button class="btn btn-primary" onclick="filterProducts()" aria-label="Tìm kiếm">🔍</button>
+                    </div>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button id="theme-toggle" class="btn btn-outline-light me-3" aria-label="Chuyển chế độ tối"><i
+                            class="fas fa-moon"></i></button>
+                    <div class="cart-info" onclick="showPage('cart')" role="button" tabindex="0"
+                        aria-label="Xem giỏ hàng">Giỏ hàng 🛒 (<span id="cart-count">0</span>)</div>
+                </div>
+            </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Mở/Đóng menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link nav-home" href="#" onclick="showPage('home')" aria-label="Trang chủ">
+                                <i class="fas fa-home me-1"></i> Trang chủ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-products" href="#" onclick="showPage('products')"
+                                aria-label="Sản phẩm">
+                                <i class="fas fa-paw me-1"></i> Sản phẩm
+                            </a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-account" href="#" id="accountDropdown" role="button"
+                                data-bs-toggle="dropdown" data-bs-trigger="hover" aria-expanded="false"
+                                aria-label="Tài khoản">
+                                <i class="fas fa-user me-1"></i> Tài khoản
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="accountDropdown">
+                                <li><a class="dropdown-item" href="#" onclick="showPage('account')">Đăng nhập / Đăng
+                                        ký</a></li>
+                                <li><a class="dropdown-item" href="#" onclick="showPage('contact')">Liên hệ</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-cart" href="#" onclick="showPage('cart')" aria-label="Giỏ hàng">
+                                <i class="fas fa-shopping-cart me-1"></i> Giỏ hàng
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-4">
+        <section id="home" class="page active">
+            <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="imagespetfud/pet-banner.png" class="d-block w-100" alt="Chào mừng đến PetFood Store"
+                            style="height: 300px; object-fit: cover;">
+                        <div class="carousel-caption d-none d-md-block"
+                            style="background: rgba(0,0,0,0.5); border-radius: 10px; padding: 20px;">
+                            <h1 class="display-4">Chào mừng đến với PetFood Store</h1>
+                            <p class="lead">Thức ăn và phụ kiện cao cấp cho thú cưng của bạn</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagespetfud/bg2.png" class="d-block w-100" alt="Thức ăn cho chó"
+                            style="height: 300px; object-fit: cover;">
+                        <div class="carousel-caption d-none d-md-block"
+                            style="background: rgba(0,0,0,0.5); border-radius: 10px; padding: 20px;">
+                            <h1 class="display-4">Thức ăn dinh dưỡng cho chó</h1>
+                            <p class="lead">Protein cao, hỗ trợ phát triển khỏe mạnh</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="imagespetfud/bg.png" class="d-block w-100" alt="Thức ăn cho mèo"
+                            style="height: 300px; object-fit: cover;">
+                        <div class="carousel-caption d-none d-md-block"
+                            style="background: rgba(0,0,0,0.5); border-radius: 10px; padding: 20px;">
+                            <h1 class="display-4">Thức ăn bổ dưỡng cho mèo</h1>
+                            <p class="lead">Giàu taurine, tốt cho mắt và tim</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="product-showcase mt-4">
+                <h3 class="text-center text-primary">Sản phẩm nổi bật</h3>
+                <div id="featured-products" class="row">
+                </div>
+            </div>
+            <div class="blog-section mt-5">
+                <h3 class="text-center text-primary">Bài viết mới nhất</h3>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="imagespetfud/blog1.png" class="card-img-top" alt="Chọn thức ăn cho chó"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h4 class="card-title text-primary">Cách chọn thức ăn tốt nhất cho chó</h4>
+                                <p class="card-text">Chọn thức ăn phù hợp cho chó là rất quan trọng...</p>
+                                <a class="card-link text-primary" data-bs-toggle="collapse" href="#detail1"
+                                    role="button" aria-expanded="false" aria-controls="detail1">Đọc thêm...</a>
+                            </div>
+                            <div class="collapse mt-2" id="detail1">
+                                <div class="card card-body">
+                                    <p>Khi chọn thức ăn cho chó, bạn cần xem xét độ tuổi, kích thước, mức độ hoạt động
+                                        và tình trạng sức khỏe của chúng. Đối với chó con, chọn thức ăn có protein cao
+                                        (ít nhất 28%) để hỗ trợ sự phát triển. Chó trưởng thành cần cân bằng dinh dưỡng
+                                        với chất béo vừa phải để duy trì trọng lượng. Nếu chó có vấn đề sức khỏe như dị
+                                        ứng, hãy chọn loại thức ăn không chứa gluten hoặc hạt. Luôn kiểm tra nhãn để đảm
+                                        bảo thành phần tự nhiên, không chất bảo quản. Ngoài ra, kết hợp với nước sạch và
+                                        theo dõi phản ứng của chó sau khi thay đổi chế độ ăn. Thức ăn chất lượng cao sẽ
+                                        giúp chó của bạn khỏe mạnh, vui vẻ và sống lâu hơn. Bla bla, thêm chi tiết về
+                                        các thương hiệu khuyến nghị và công thức tự làm thức ăn tại nhà.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="imagespetfud/blog2.png" class="card-img-top" alt="Chăm sóc mèo"
+                                style="height: 200px; object-fit: cover;">
+                            <div class="card-body">
+                                <h4 class="card-title text-primary">5 mẹo chăm sóc mèo</h4>
+                                <p class="card-text">Giữ cho mèo của bạn vui vẻ và khỏe mạnh...</p>
+                                <a class="card-link text-primary" data-bs-toggle="collapse" href="#detail2"
+                                    role="button" aria-expanded="false" aria-controls="detail2">Đọc thêm...</a>
+                            </div>
+                            <div class="collapse mt-2" id="detail2">
+                                <div class="card card-body">
+                                    <p>1. Chải lông hàng ngày: Giúp giảm rụng lông và phát hiện sớm vấn đề da. 2. Chơi
+                                        đùa thường xuyên: Ít nhất 15 phút mỗi ngày để giữ mèo năng động và giảm stress.
+                                        3. Chế độ ăn giàu taurine: Thiết yếu cho tim và mắt; chọn thức ăn chất lượng
+                                        cao. 4. Theo dõi sức khỏe: Đưa đến thú y định kỳ và chú ý dấu hiệu bệnh. 5. Tạo
+                                        không gian an toàn: Cung cấp cây cào móng và nơi ẩn náu. Những mẹo này sẽ giúp
+                                        mèo của bạn sống hạnh phúc và khỏe mạnh. Bla bla, thêm chi tiết về các trò chơi
+                                        khuyến nghị, lịch tiêm chủng, và cách xử lý mèo hoang dã.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="imagespetfud/petsnack.png" class="card-img-top" alt="Đồ ăn vặt mới">
+                            <div class="card-body">
+                                <h4 class="card-title text-primary">Đồ ăn vặt mới</h4>
+                                <p class="card-text">Khám phá dòng đồ ăn vặt ngon và giàu dinh dưỡng...</p>
+                                <a class="card-link text-primary" data-bs-toggle="collapse" href="#detail3"
+                                    role="button" aria-expanded="false" aria-controls="detail3">Đọc thêm...</a>
+                            </div>
+                            <div class="collapse mt-2" id="detail3">
+                                <div class="card card-body">
+                                    <p>Dòng đồ ăn vặt mới của PetFood Store được làm từ nguyên liệu tự nhiên như gà,
+                                        khoai lang và bí đỏ, giàu protein (20%) và không chứa hạt để phù hợp với chó mèo
+                                        dị ứng. Chúng giúp làm sạch răng miệng, hỗ trợ tiêu hóa và là phần thưởng hoàn
+                                        hảo cho huấn luyện. Có nhiều hương vị: gà nướng, cá hồi hun khói, và thịt bò.
+                                        Mỗi túi 250g, giá chỉ 150.000 VNĐ. Sản phẩm được kiểm nghiệm an toàn và được thú
+                                        y khuyến nghị. Bla bla, thêm chi tiết về lợi ích dinh dưỡng, cách sử dụng, và
+                                        đánh giá từ khách hàng.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="products" class="page">
+            <h2 class="text-primary">Sản phẩm của chúng tôi</h2>
+            <p>Có <span id="product-count-products">18</span> sản phẩm.</p>
+            <div class="sorting-section mb-3 d-flex justify-content-center align-items-center gap-2">
+                <label for="sort-select" class="form-label">Sắp xếp theo:</label>
+                <select id="sort-select" class="form-select w-auto" onchange="sortProducts()">
+                    <option value="default">Mặc định</option>
+                    <option value="price-low">Giá: Thấp đến cao</option>
+                    <option value="price-high">Giá: Cao đến thấp</option>
+                    <option value="name-asc">Tên: A-Z</option>
+                    <option value="name-desc">Tên: Z-A</option>
+                    <option value="popular">Phổ biến</option>
+                    <option value="discount">Giảm giá</option>
+                    <option value="newest">Mới nhất</option>
+                </select>
+                <p id="sort-feedback" class="sort-feedback mb-0"></p>
+            </div>
+            <div class="category-filter d-flex justify-content-center gap-2 flex-wrap mb-3">
+                <button class="btn btn-outline-primary" onclick="filterByCategory('all')"
+                    aria-label="Hiển thị tất cả">Tất cả</button>
+                <button class="btn btn-outline-primary" onclick="filterByCategory('food-dog')"
+                    aria-label="Thức ăn cho chó">Thức ăn chó</button>
+                <button class="btn btn-outline-primary" onclick="filterByCategory('food-cat')"
+                    aria-label="Thức ăn cho mèo">Thức ăn mèo</button>
+                <button class="btn btn-outline-primary" onclick="filterByCategory('snacks')" aria-label="Đồ ăn vặt">Đồ
+                    ăn vặt</button>
+            </div>
+            <div id="all-products" class="row"></div>
+            <div class="pagination d-flex justify-content-center gap-2 mt-3">
+                <button class="btn btn-primary" onclick="changePage(-1)">« Trước</button>
+                <span id="page-info" class="align-self-center">Trang 1 / 4</span>
+                <button class="btn btn-primary" onclick="changePage(1)">Tiếp »</button>
+            </div>
+        </section>
+        <section id="contact" class="page">
+            <h2 class="text-primary">Liên hệ với chúng tôi</h2>
+            <form id="contact-form" class="w-50 mx-auto" onsubmit="event.preventDefault(); submitContactForm()">
+                <div class="mb-3">
+                    <input type="text" id="name" class="form-control" placeholder="Tên của bạn" required
+                        aria-label="Tên của bạn">
+                </div>
+                <div class="mb-3">
+                    <input type="email" id="email" class="form-control" placeholder="Email của bạn" required
+                        aria-label="Email của bạn">
+                </div>
+                <div class="mb-3">
+                    <textarea id="message" class="form-control" placeholder="Tin nhắn của bạn" required
+                        aria-label="Tin nhắn của bạn"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" aria-label="Gửi form liên hệ">Gửi</button>
+            </form>
+            <p id="contact-confirmation" class="confirmation-message mt-3"></p>
+        </section>
+        <section id="account" class="page">
+            <h2 class="text-primary">Tài khoản</h2>
+            <div class="text-center mb-3">
+                <button id="toggle-login" class="btn btn-outline-primary me-2" onclick="toggleAccountMode('login')">Đăng
+                    nhập</button>
+                <button id="toggle-signup" class="btn btn-outline-primary" onclick="toggleAccountMode('signup')">Đăng
+                    ký</button>
+            </div>
+            <div id="login-section">
+                <form id="login-form" class="w-50 mx-auto" onsubmit="event.preventDefault(); login()">
+                    <div class="mb-3">
+                        <input type="text" id="username" class="form-control" placeholder="Tên đăng nhập" required
+                            aria-label="Tên đăng nhập">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="password" class="form-control" placeholder="Mật khẩu" required
+                            aria-label="Mật khẩu">
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-label="Đăng nhập">Đăng nhập</button>
+                </form>
+                <p class="text-center mt-3">Không có tài khoản? <a href="#" onclick="toggleAccountMode('signup')">Đăng
+                        ký ngay</a></p>
+                <p id="login-message" class="confirmation-message mt-3"></p>
+            </div>
+            <div id="signup-section" style="display: none;">
+                <form id="signup-form" class="w-50 mx-auto" onsubmit="event.preventDefault(); signup()">
+                    <div class="mb-3">
+                        <input type="email" id="signup-email" class="form-control" placeholder="Email" required
+                            aria-label="Email">
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" id="signup-username" class="form-control" placeholder="Tên đăng nhập"
+                            required aria-label="Tên đăng nhập">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="signup-password" class="form-control" placeholder="Mật khẩu" required
+                            aria-label="Mật khẩu">
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" id="signup-confirm-password" class="form-control"
+                            placeholder="Xác nhận mật khẩu" required aria-label="Xác nhận mật khẩu">
+                    </div>
+                    <button type="submit" class="btn btn-primary" aria-label="Đăng ký">Đăng ký</button>
+                </form>
+                <p class="text-center mt-3">Đã có tài khoản? <a href="#" onclick="toggleAccountMode('login')">Đăng
+                        nhập</a></p>
+                <p id="signup-message" class="confirmation-message mt-3"></p>
+            </div>
+        </section>
+        <section id="cart" class="page">
+            <h2 class="mb-4">Giỏ hàng</h2>
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-warning fw-bold mb-3">
+                                <i class="fas fa-shopping-basket me-2"></i> Giỏ hàng của bạn
+                            </h3>
+                            <div id="cart-list" class="text-center text-muted py-4">
+                                Giỏ hàng của bạn đang trống.
+                            </div>
+
+                            <div id="note-section" class="mt-3" style="display:none;">
+                                <label for="note" class="form-label fw-semibold">Ghi chú đơn hàng:</label>
+                                <textarea id="note" class="form-control"
+                                    placeholder="Nhập ghi chú của bạn..."></textarea>
+                            </div>
+
+                            <div id="invoice-section" class="form-check mt-3" style="display:none;">
+                                <input class="form-check-input" type="checkbox" id="invoice" />
+                                <label class="form-check-label" for="invoice">Xuất hóa đơn cho đơn hàng</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h3 class="text-warning fw-bold mb-3">
+                                <i class="fas fa-file-invoice me-2"></i> Thông tin đơn hàng
+                            </h3>
+                            <label for="city" class="form-label fw-semibold">Tỉnh / Thành phố</label>
+                            <select id="city" class="form-select mb-3" onchange="loadDistricts()">
+                                <option value="">-- Chọn Tỉnh/Thành phố --</option>
+                                <option>TP. Hồ Chí Minh</option>
+                                <option>Hà Nội</option>
+                                <option>Đà Nẵng</option>
+                            </select>
+                            <label for="district" class="form-label fw-semibold">Quận / Huyện</label>
+                            <select id="district" class="form-select mb-3" onchange="loadWards()">
+                                <option value="">-- Chọn Quận/Huyện --</option>
+                            </select>
+
+                            <label for="ward" class="form-label fw-semibold">Phường / Xã</label>
+                            <select id="ward" class="form-select mb-3">
+                                <option value="">-- Chọn Phường/Xã --</option>
+                            </select>
+
+                            <div class="d-flex justify-content-between align-items-center mt-3 border-top pt-3">
+                                <strong>Tổng tiền:</strong>
+                                <span id="total" class="fw-bold text-danger">0đ</span>
+                            </div>
+
+                            <ul class="small mt-3 text-muted">
+                                <li>Miễn phí vận chuyển cho đơn hàng trên 500.000VNDđ</li>
+                                <li>Giao hàng hỏa tốc trong 4 giờ tại TP.HCM</li>
+                            </ul>
+
+                            <button id="checkoutBtn" class="btn btn-warning w-100 mt-3">
+                                THANH TOÁN
+                            </button>
+                            <p id="login-warning" class="text-danger mt-3 fw-bold" style="display:none;">
+                                🐾 Vui lòng đăng nhập vào tài khoản của bạn để tiếp tục thanh toán.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img id="modal-product-image" src="" alt="" class="img-fluid">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 id="modal-product-name"></h4>
+                            <p id="modal-product-description"></p>
+                            <p><strong>Giá:</strong> <span id="modal-product-price"></span> VNĐ <span
+                                    id="modal-product-discount"></span></p>
+                            <div class="quantity-selector d-flex align-items-center mb-3">
+                                <label for="modal-quantity" class="me-2">Số lượng:</label>
+                                <button class="btn btn-outline-secondary btn-sm"
+                                    onclick="changeModalQuantity(-1)">-</button>
+                                <input type="number" id="modal-quantity" class="form-control text-center mx-2" value="1"
+                                    min="1" style="width: 60px;">
+                                <button class="btn btn-outline-secondary btn-sm"
+                                    onclick="changeModalQuantity(1)">+</button>
+                            </div>
+                            <button id="modal-add-to-cart" class="btn btn-primary">Thêm vào giỏ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button id="back-to-top" class="btn btn-primary" style="position: fixed; bottom: 20px; right: 20px; display: none;"
+        aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>THÔNG TIN</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="showPage('home')" class="text-white text-decoration-none"
+                                aria-label="Trang chủ">Trang chủ</a></li>
+                        <li><a href="#" onclick="showPage('products')" class="text-white text-decoration-none"
+                                aria-label="Sản phẩm">Sản phẩm</a></li>
+                        <li><a href="#" onclick="showPage('home')" class="text-white text-decoration-none"
+                                aria-label="Tin tức">Tin tức</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="text-white text-decoration-none"
+                                aria-label="Liên hệ">Liên hệ</a></li>
+                        <li><a href="#" onclick="showPage('account')" class="text-white text-decoration-none"
+                                aria-label="Tài khoản">Tài khoản</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>HỖ TRỢ</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Giao nhận và thanh toán</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Đổi trả và bảo hành</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Đăng ký thành viên</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>LIÊN HỆ</h4>
+                    <p>Trường Đại học Sư Phạm Kỹ Thuật TP.HCM</p>
+                    <p>1 Võ Văn Ngân, Thủ Đức, TP.HCM</p>
+                    <p>0908 211 594</p>
+                    <p>HappyBowlHappyPets@gmail.com.vn</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>FANPAGE</h4>
+                    <p>PET CENTER - PET FOODS & PET SUPPLIES</p>
+                    <div class="d-flex gap-2">
+                        <a href="https://www.facebook.com/" aria-label="Facebook"><img src="imagespetfud/fb.png"
+                                alt="Facebook"></a>
+                        <a href="https://www.instagram.com" aria-label="Instagram"><img src="imagespetfud/Ins.jpg"
+                                alt="Instagram"></a>
+                        <a href="https://www.youtube.com" aria-label="YouTube"><img src="imagespetfud/yt.jpg"
+                                alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3 border-top pt-3">
+                <p class="small">© Bản quyền thuộc về HAPPY BOWL HAPPY PETS - PET FOODS & PET SUPPLIES | Cung cấp bởi HP
+                </p>
+                <p class="small">1 Võ Văn Ngân, Thủ Đức, TP.HCM | Email: HappyBowlHappyPets@gmail.com.vn | Hotline: 0908
+                    211 594</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
