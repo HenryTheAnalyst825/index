@@ -1,45 +1,28 @@
-🐾 PetFood Store — E-Commerce Web Application
-A fully functional e-commerce platform for pet food and supplies, built with vanilla HTML, CSS, and JavaScript.
+# 🐾 PetFud Project - Pet Care & Supplies E-commerce Interface
 
-📌 Features
+A professional web interface project designed to showcase pet services and products. This repository demonstrates core front-end development skills and version control management using Git.
 
-Product Catalog — Browse 18+ products with category filtering (Dog Food, Cat Food, Snacks)
-Multi-Criteria Sorting — Sort by price, name, popularity, discount, and newest
-Shopping Cart — Add/remove items, adjust quantities, view order total
-Checkout Flow — Address selection (City → District → Ward) with order notes
-User Authentication — Login and Sign-up with form validation
-Contact Form — Customer inquiry submission
-Dark Mode — Toggle between light and dark themes
-Responsive Design — Mobile-friendly layout using Bootstrap 5
-Accessibility — ARIA labels throughout for screen reader support
-Site Map — Visual architecture diagram built with Mermaid.js
+## 🚀 Live Demo
+Check out the live website here: [Your GitHub Pages Link](https://henrytheanalyst825.github.io/index/)
 
+## 🛠 Tech Stack
+* **HTML5 & CSS3**: Core structure and custom styling.
+* **Bootstrap 5**: Responsive grid system and UI components (Cards, Navbar).
+* **Git/GitHub**: Version control and deployment via GitHub Desktop.
 
-🛠️ Tech Stack
-LayerTechnologyStructureHTML5StylingCSS3, Bootstrap 5.3LogicJavaScript (ES6)IconsFont Awesome 6.5DiagramsMermaid.js
+## 📂 Project Structure
+* `Imagespetfud/`: Centralized directory for high-quality image assets.
+* `index.html`: Main landing page of the application.
+* `petfud/`: Source folder containing modular components and scripts.
 
-📁 Project Structure
-petfood-store/
-├── Petfood store.html     # Homepage
-├── products.html          # Product listing page
-├── cart.html              # Shopping cart & checkout
-├── contact-account.html   # Login / Sign-up / Contact
-├── sitemap.html           # Site architecture diagram
-├── Pet.js                 # Main JavaScript logic
-├── Pet.css                # Custom styles
-└── imagespetfud/          # Images & assets
+## ✨ Key Features
+- [x] **Responsive Design**: Fully optimized for Desktop, Tablet, and Mobile views.
+- [x] **Asset Management**: Structured image paths for efficient loading and scalability.
+- [x] **User-Centric UI**: Modern, clean, and intuitive pet-focused interface.
 
-🚀 How to Run
+## 👨‍💼 About the Author
+* **Henry** - Industrial Management Major.
+* **Focus**: Data Analysis | Operations Management | Project Management.
+* **Goal**: Levering technical skills and management logic to solve real-world industrial challenges.
 
-Clone or download this repository
-Open Petfood store.html in your browser
-No installation or build step required — runs entirely in the browser
-
-
-📸 Pages Overview
-PageDescriptionHomeHero banner, featured products, blog sectionProductsFull catalog with filters, sorting, paginationCartOrder summary, address selection, checkoutAccountLogin / Register / Contact formSite MapVisual diagram of site structure
-
-👤 Author
-Vo Nguyen Minh Hieu
-Industrial Management — HCMC University of Technology and Engineering
-GitHub: HenryTheAnalyst825
+---
