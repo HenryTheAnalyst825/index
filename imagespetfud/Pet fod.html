@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pet Insurance Store</title>
+  <link rel="stylesheet" href="file:///C|/Users/ADMIN/AppData/Local/Temp/4e6c427e-c0c1-4133-a8f7-810886d0c030_Pet fud.7z.030/pet.css" />
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  <header>
+    
+   
+	  
+   
+	  <style>body {
+  font-family: Arial, sans-serif;
+  background: #f9f9f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+
+
+
+.section-title {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.products-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.product {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  width: 160px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.product h4 {
+  margin: 8px 0 4px;
+}
+
+.add-to-cart {
+  background: orange;
+  border: none;
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#cart {
+  margin: 30px auto;
+  max-width: 800px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+
+.cart-item h4 {
+  flex: 1;
+  margin-left: 10px;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-controls button {
+  background: #ffcc66;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+}
+
+/* Logo chỉnh nhỏ và đều */
+.logo {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
+
+/* Tìm kiếm */
+.btn-search {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+}
+.btn-search:hover {
+  background-color: #ff8c00;
+}
+
+/* Thanh menu */
+.menu-bar {
+  background-color: #ffa500;
+}
+
+/* Nút từng màu */
+.btn-home { background-color: #ff9800; color: white; }
+.btn-about { background-color: #4caf50; color: white; }
+.btn-products { background-color: #2196f3; color: white; }
+.btn-blog { background-color: #f44336; color: white; }
+.btn-contact { background-color: #9c27b0; color: white; }
+.btn-cart { background-color: #ffeb3b; color: black; font-weight: 500; }
+.btn-account { background-color: #03a9f4; color: white; }
+
+/* Bo góc + hover */
+.navbar .btn {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 8px 16px;
+}
+.navbar .btn:hover {
+  filter: brightness(0.9);
+  color: white;
+}
+/* Hero Section */
+.hero-section {
+  background-color: #f8f8f8;
+  border: 2px solid #ffa500;
+  border-top: none;
+}
+
+.hero-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #ffa500;
+  margin-bottom: 10px;
+}
+
+.hero-title span {
+  color: #ffa500;
+}
+
+.hero-subtitle {
+  color: #444;
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+/* Nút Mua sắm ngay */
+.btn-shop {
+  background-color: #ffa500;
+  color: white;
+  font-weight: 500;
+  padding: 10px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-shop:hover {
+  background-color: #ff8c00;
+  color: #fff;
+}
+/* Blog Section */
+.blog-section {
+  background-color: #fff;
+}
+
+.section-title {
+  color: #ffa500;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+/* Blog Card */
+.blog-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+}
+
+.blog-title {
+  color: #ff9800;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.blog-text {
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.blog-link {
+  color: #ff9800;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.blog-link:hover {
+  text-decoration: underline;
+}
+.product-detail {
+  background-color: #fff;
+}
+
+.product-img {
+  max-width: 80%;
+  border-radius: 8px;
+}
+
+.product-name {
+  font-weight: 600;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.product-sizes .btn-outline-secondary {
+  border-color: #ddd;
+  color: #333;
+  background-color: #fff;
+}
+
+.product-sizes .btn-outline-secondary:hover,
+.product-sizes .btn-check:checked + .btn-outline-secondary {
+  background-color: #ffa500;
+  color: #fff;
+  border-color: #ffa500;
+}
+
+.quantity-input .btn {
+  width: 40px;
+  font-weight: bold;
+}
+
+.btn-cart {
+  background-color: #0066ff;
+  font-weight: 600;
+  padding: 10px 25px;
+  border-radius: 8px;
+}
+
+.btn-cart:hover {
+  background-color: #004de6;
+}
+
+</style>
+	  <header class="border-bottom py-2">
+  <div class="container d-flex align-items-center justify-content-between flex-wrap">
+    <!-- Logo + Tên -->
+    <div class="d-flex align-items-center gap-2">
+      <img src="logo2.jpg" alt="Logo PetFood Store" class="logo">
+      <h1 class="h5 mb-0 text-primary">🐾 PetFood Store</h1>
+    </div>
+
+    <!-- Tìm kiếm -->
+    <form class="d-flex my-2" role="search" style="flex: 1; max-width: 400px;">
+      <input class="form-control" type="search" placeholder="Tìm kiếm sản phẩm..." aria-label="Search">
+      <button class="btn btn-search" type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    
+    <div class="text-end small">
+      <div class="fw-bold">Giỏ hàng 🛒 (0)</div>
+      <div>Mon - Sun: 8:00 - 22:00</div>
+      <div>028 666 02468 | 032 850 1369</div>
+    </div>
+  </div>
+
+  
+  <nav class="navbar navbar-expand-lg navbar-dark menu-bar mt-2">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarMenu">
+        <ul class="navbar-nav d-flex gap-2 flex-wrap">
+          <li class="nav-item"><a href="#" class="btn btn-home"><i class="fa fa-home me-1"></i>Trang chủ</a></li>
+          <li class="nav-item"><a href="#" class="btn btn-about"><i class="fa fa-info-circle me-1"></i>Giới thiệu</a></li>
+          <li class="nav-item"><a href="#" class="btn btn-products"><i class="fa fa-paw me-1"></i>Sản phẩm</a></li>
+          <li class="nav-item"><a href="#" class="btn btn-blog"><i class="fa fa-blog me-1"></i>Blog</a></li>
+          <li class="nav-item"><a href="#" class="btn btn-contact"><i class="fa fa-envelope me-1"></i>Liên hệ</a></li>
+          <li class="nav-item"><a href="#" class="btn btn-cart"><i class="fa fa-shopping-cart me-1"></i>Giỏ hàng</a></li>
+          <li class="nav-item dropdown">
+            <a class="btn btn-account dropdown-toggle" href="#" data-bs-toggle="dropdown"><i class="fa fa-user me-1"></i>Tài khoản</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Đăng nhập</a></li>
+              <li><a class="dropdown-item" href="#">Đăng ký</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+  </header>
+
+  <main>
+	    <section class="hero-section text-center py-5">
+  <div class="container">
+    <h2 class="hero-title">Chào mừng đến với <span>PetFood Store</span></h2>
+    <p class="hero-subtitle">
+      Cửa hàng một cửa cho thức ăn và phụ kiện cao cấp cho thú cưng.
+    </p>
+    <a href="#" class="btn btn-shop">Mua sắm ngay</a>
+  </div>
+</section>
+
+    
+
+    <section id="dog">
+      <h3>Do</h3>
+      <div class="products-row">
+        <div class="product">
+          <img src="anha.jpg" alt="Dog Basic Plan" />
+          <h4>Súp thưởng cho chó vị thịt bò INABA Beef Flavor&nbsp;</h4>
+          <p>$15</p>
+          <button class="add-to-cart" data-name="Dog Basic Plan" data-price="15" data-image="https://place-puppy.com/150x150">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhb.jpg" alt="Dog Standard Plan" />
+          <h4>Snack bánh thưởng cho mèo CIAO Chicken, Salmon &amp; Shrimp vị thịt gà, cá hồi và tôm&nbsp;</h4>
+          <p>$25</p>
+          <button class="add-to-cart" data-name="Dog Standard Plan" data-price="25" data-image="https://place-puppy.com/151x151">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhc.jpg" alt="Dog Premium Plan" />
+          <h4>Thuốc bổ sung Vitamin tổng hợp cho chó VEGEBRAND Fruit Vitamin&nbsp;</h4>
+          <p>$40</p>
+          <button class="add-to-cart" data-name="Dog Premium Plan" data-price="40" data-image="https://place-puppy.com/152x152">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhd.jpg" alt="Dog Care Plan" />
+          <h4>Xương cho chó gặm sạch răng vị thịt bò NUTRABONE Beef Dental Bone&nbsp;</h4>
+          <p>$18</p>
+          <button class="add-to-cart" data-name="Dog Care Plan" data-price="18" data-image="https://place-puppy.com/153x153">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhe.jpg" alt="Dog Plus Plan" />
+          <h4>Bánh thưởng cho chó dạng que vị cá WUJI Jerky Stick Fish Flavor&nbsp;</h4>
+          <p>$30</p>
+          <button class="add-to-cart" data-name="Dog Plus Plan" data-price="30" data-image="https://place-puppy.com/154x154">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhf.jpg" alt="Dog Elite Plan" />
+          <h4>Bình sữa cho chó mèo con sơ sinh bú PAW Pet Silicone Milk Bottle&nbsp;</h4>
+          <p>$45</p>
+          <button class="add-to-cart" data-name="Dog Elite Plan" data-price="45" data-image="https://place-puppy.com/155x155">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="cat">
+      <h3>&nbsp;</h3>
+      <div class="products-row">
+        <div class="product">
+          <img src="anhg.jpg" alt="Cat Basic Plan" />
+          <h4>Pate cho mèo vị cá ngừ trộn thịt gà IRIS OHYAMA Tuna Chicken&nbsp;</h4>
+          <p>$12</p>
+          <button class="add-to-cart" data-name="Cat Basic Plan" data-price="12" data-image="https://placekitten.com/150/150">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhh.jpg" alt="Cat Standard Plan" />
+          <h4>Xương gặm sạch răng cho chó hương vị bơ VEGEBRAND 7 Dental Effects Avocado Dental Stick&nbsp;</h4>
+          <p>$20</p>
+          <button class="add-to-cart" data-name="Cat Standard Plan" data-price="20" data-image="https://placekitten.com/151/151">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhi.jpg" alt="Cat Premium Plan" />
+          <h4>Xương gặm sạch răng cho chó vị thịt bò SPIRIT Beef Dental Bone&nbsp;</h4>
+          <p>$35</p>
+          <button class="add-to-cart" data-name="Cat Premium Plan" data-price="35" data-image="https://placekitten.com/152/152">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhk.jpg" alt="Cat Care Plan" />
+          <h4>Thức ăn cho mèo tiêu hóa búi lông ROYAL CANIN Hairball Care&nbsp;</h4>
+          <p>$17</p>
+          <button class="add-to-cart" data-name="Cat Care Plan" data-price="17" data-image="https://placekitten.com/153/153">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhw.jpg" alt="Cat Plus Plan" />
+          <h4>Balo đựng chó mèo họa tiết hoa lá LOFFE Pet Leaf Backpack&nbsp;</h4>
+          <p>$28</p>
+          <button class="add-to-cart" data-name="Cat Plus Plan" data-price="28" data-image="https://placekitten.com/154/154">Add to Cart</button>
+        </div>
+        <div class="product">
+          <img src="anhm.jpg" alt="Cat Elite Plan" />
+          <h4>Balo đựng chó mèo phi hành gia LOFFE Square Transparent&nbsp;</h4>
+          <p>$42</p>
+          <button class="add-to-cart" data-name="Cat Elite Plan" data-price="42" data-image="https://placekitten.com/155/155">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+	  <section class="product-detail py-5">
+  <div class="container">
+    <div class="row align-items-start">
+      
+      <div class="col-md-6 text-center">
+        <img src="anha.jpg" alt="Royal Canin Kitten" class="product-img img-fluid">
+      </div>
+
+     
+      <div class="col-md-6">
+        <h4 class="product-name text-primary">Súp Thưởng Thức Cho Chó Vị Thịt Bò INABA Beef Flavor &nbsp;&nbsp;</h4>
+        <div class="product-rating mb-2">
+          <span class="text-warning">★★★★★</span> 
+          <span class="text-muted">2 đánh giá</span>
+        </div>
+        <p class="product-description text-muted">
+          Thức ăn cho mèo con Royal Canin Kitten giúp mèo phát triển khỏe mạnh, phù hợp cho mèo mẹ & mèo con dưới 4 tháng tuổi...
+        </p>
+
+        <p><strong>Thương hiệu:</strong> Royal Canin</p>
+        <p class="product-price">135.000₫</p>
+
+       
+        <div class="product-sizes mb-3">
+          <label class="fw-bold me-2">Size:</label>
+          <div class="btn-group" role="group">
+            <input type="radio" class="btn-check" name="size" id="size400" checked>
+            <label class="btn btn-outline-secondary" for="size400">400g</label>
+
+            <input type="radio" class="btn-check" name="size" id="size2kg">
+            <label class="btn btn-outline-secondary" for="size2kg">2kg</label>
+
+            <input type="radio" class="btn-check" name="size" id="size4kg">
+            <label class="btn btn-outline-secondary" for="size4kg">4kg</label>
+
+            <input type="radio" class="btn-check" name="size" id="size10kg">
+            <label class="btn btn-outline-secondary" for="size10kg">10kg</label>
+
+            <input type="radio" class="btn-check" name="size" id="size13kg">
+            <label class="btn btn-outline-secondary" for="size13kg">13kg</label>
+          </div>
+        </div>
+
+        <!-- Số lượng -->
+        <div class="quantity-section mb-3">
+          <label class="fw-bold me-2">Số lượng:</label>
+          <div class="input-group quantity-input" style="width: 150px;">
+            <button class="btn btn-outline-secondary" type="button" id="minus">−</button>
+            <input type="text" class="form-control text-center" value="1" id="quantity">
+            <button class="btn btn-outline-secondary" type="button" id="plus">+</button>
+          </div>
+        </div>
+ 
+        <p class="fw-bold mb-3">Tổng số tiền: <span id="total">135.000₫</span></p>
+
+        
+        <button class="btn btn-primary btn-cart">Thêm Vào Giỏ Hàng</button>
+
+      
+        <div class="shipping-info mt-3 text-muted small">
+          <i class="fa fa-truck"></i> Miễn phí vận chuyển cho đơn hàng từ 500k.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  const minus = document.getElementById("minus");
+  const plus = document.getElementById("plus");
+  const quantity = document.getElementById("quantity");
+  const total = document.getElementById("total");
+  const price = 135000;
+
+  minus.onclick = () => {
+    let value = parseInt(quantity.value);
+    if (value > 1) value--;
+    quantity.value = value;
+    total.textContent = (value * price).toLocaleString() + "₫";
+  };
+
+  plus.onclick = () => {
+    let value = parseInt(quantity.value);
+    value++;
+    quantity.value = value;
+    total.textContent = (value * price).toLocaleString() + "₫";
+  };
+</script>
+
+	<section class="blog-section py-5">
+  <div class="container">
+    <h2 class="section-title">Bài viết mới nhất</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="blog-card">
+          <h5 class="blog-title">Cách chọn thức ăn tốt nhất cho chó</h5>
+          <p class="blog-text">Chọn thức ăn phù hợp cho chó là rất quan trọng...</p>
+          <a href="#" class="blog-link">Đọc thêm...</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="blog-card">
+          <h5 class="blog-title">5 mẹo chăm sóc mèo</h5>
+          <p class="blog-text">Giữ cho mèo của bạn vui vẻ và khỏe mạnh...</p>
+          <a href="#" class="blog-link">Đọc thêm...</a>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="blog-card">
+          <h5 class="blog-title">Đồ ăn vặt mới</h5>
+          <p class="blog-text">Khám phá dòng đồ ăn vặt ngon và giàu dinh dưỡng...</p>
+          <a href="#" class="blog-link">Đọc thêm...</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+		 
+  </main>
+
+  <footer>
+     <footer class="bg-dark text-white py-4 mt-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h4>THÔNG TIN</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" onclick="showPage('home')" class="text-white text-decoration-none" aria-label="Trang chủ">Trang chủ</a></li>
+                        <li><a href="#" onclick="showPage('products')" class="text-white text-decoration-none" aria-label="Sản phẩm">Sản phẩm</a></li>
+                        <li><a href="#" onclick="showPage('blog')" class="text-white text-decoration-none" aria-label="Tin tức">Tin tức</a></li>
+                        <li><a href="#" onclick="showPage('contact')" class="text-white text-decoration-none" aria-label="Liên hệ">Liên hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>HỖ TRỢ</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Hướng dẫn mua hàng</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Giao nhận và thanh toán</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Đổi trả và bảo hành</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Đăng ký thành viên</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h4>LIÊN HỆ</h4>
+                    <p>Trường Đại học Sư Phạm Kỹ Thuật TP.HCM</p>
+                    <p>1 Võ Văn Ngân, Thủ Đức, TP.HCM</p>
+                    <p>0908 211 594</p>
+                    <p>HappyBowlHappyPets@gmail.com.vn</p>
+                </div>
+                <div class="col-md-3">
+                    <h4>FANPAGE</h4>
+                    <p>PET CENTER - PET FOODS & PET SUPPLIES</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" aria-label="Facebook"><img src="fb.jpg" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="Ins.jpg" alt="Instagram"></a>
+                        <a href="#" aria-label="YouTube"><img src="yt.jpg" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-3 border-top pt-3">
+                <p class="small">© Bản quyền thuộc về HAPPY BOWL HAPPY PETS - PET FOODS & PET SUPPLIES | Cung cấp bởi HP</p>
+                <p class="small">1 Võ Văn Ngân, Thủ Đức, TP.HCM | Email: HappyBowlHappyPets@gmail.com.vn | Hotline: 0908 211 594</p>
+            </div>
+        </div>
+    </footer>
+
+
+  <script src="file:///C|/Users/ADMIN/AppData/Local/Temp/4e6c427e-c0c1-4133-a8f7-810886d0c030_Pet fud.7z.030/pet.js"></script>
+</body>
+</html>
